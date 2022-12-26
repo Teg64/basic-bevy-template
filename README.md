@@ -21,13 +21,13 @@ cargo install cargo-generate
 To create a new project in a new directory, use:
 
 ```bash
-cargo generate https://github.com/Teg64/Basic-Bevy-Template
+cargo generate https://github.com/Teg64/basic-bevy-template
 ```
 
 Alternatively, to apply the template to an existing directory, use:
 
 ```bash
-cargo generate --init https://github.com/Teg64/Basic-Bevy-Template
+cargo generate --init https://github.com/Teg64/basic-bevy-template
 ```
 
 ## Streamlining the process
@@ -41,7 +41,7 @@ To do this, add the following to `$CARGO_HOME/cargo-generate.toml`:
 gh-username = "<YOUR GITHUB USERNAME HERE>"
 
 [favorites.bevy]
-git = "https://github.com/Teg64/Basic-Bevy-Template"
+git = "https://github.com/Teg64/basic-bevy-template"
 ```
 
 After doing this, you can apply the template using `cargo generate bevy`. You will then only need to specify your project name and whether you want to use the 2D or 3D template.

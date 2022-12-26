@@ -22,7 +22,9 @@ fn main() {
         // Inspector Plugin
         .add_plugin(WorldInspectorPlugin::new())
         // Setup
-        .add_startup_system(spawn_camera);
+        .add_startup_system(spawn_camera)
+        // Systems and Plugins
+        .add_startup_system(sample_system);
 
     app.run();
 }
@@ -32,4 +34,12 @@ fn spawn_camera(mut commands: Commands) {
         transform: Transform::from_xyz(-2.0, 2.5, 5.0).looking_at(Vec3::ZERO, Vec3::Y),
         ..default()
     });{% else %}commands.spawn(Camera2dBundle::default());{% endif %}
+}
+
+fn sample_system(mut commands: Commands, asset_server: Res<AssetServer>) {
+    commands.spawn(SpriteBundle {
+        texture: asset_server.load("sample_asset.png"),
+        ..default()
+    })
+    .insert(Name::from("Sample Sprite"));
 }

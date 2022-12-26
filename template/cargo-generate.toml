@@ -1,0 +1,13 @@
+[template]
+cargo_generate_version = ">=0.17.0"
+
+[placeholders.gh-username]
+type = "string"
+prompt = "GitHub Username:"
+regex = "^[A-Za-z0-9][A-Za-z0-9-]{0,38}$"
+
+[placeholders.camera-type]
+type = "string"
+prompt = "Choose a camera type:"
+choices = ["2D", "3D"]
+default = "2D"

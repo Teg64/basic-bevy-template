@@ -1,4 +1,3 @@
-// TODO: make sure the crate name in cargo.toml is in snake case
 use bevy::prelude::*;
 use bevy_inspector_egui::WorldInspectorPlugin;
 
@@ -29,9 +28,8 @@ fn main() {
 }
 
 fn spawn_camera(mut commands: Commands) {
-    {% if camera-type=="2D" %}commands.spawn(Camera2dBundle::default());
-    {% else %}commands.spawn(Camera3dBundle {
+    {% if camera-type=="3D" %}commands.spawn(Camera3dBundle {
         transform: Transform::from_xyz(-2.0, 2.5, 5.0).looking_at(Vec3::ZERO, Vec3::Y),
         ..default()
-    });{% endif %}
+    });{% else %}commands.spawn(Camera2dBundle::default());{% endif %}
 }

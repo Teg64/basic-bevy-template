@@ -18,11 +18,11 @@ opt-level = 1
 opt-level = 3
 
 
+# Dynamic linking currently does not work on windows. 
 [target.'cfg(windows)'.dependencies]
-# bevy = { version = "0.9.1", features = [] }
-serde = "1.0.151"
-[target.'cfg(not windows)'.dependencies]
-rand = "0.8.5"
+bevy = { version = "0.9.1", features = [] }
+[target.'cfg(not(windows))'.dependencies]
+bevy = { version = "0.9.1", features = ["dynamic"] }
 
 [dependencies]
 bevy-inspector-egui = "0.15.0"
